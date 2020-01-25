@@ -1,0 +1,20 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "SQL Server Name": {
+            "value": "JKSQLServer01"
+        },
+        "SQL Server Admin": {
+            "value": "SQLAdmin"
+        },
+        "SQL Server Password": {
+           "reference": {
+               "keyVault": {
+                   "id": "/subscriptions/6965eb53-1efc-427c-90a5-b7f30f902d11/resourceGroups/JK-RS01/providers/Microsoft.KeyVault/vaults/jkkeyvault01"
+               },
+               "secretName": "JKPassword"
+           }
+        }
+    }
+}
